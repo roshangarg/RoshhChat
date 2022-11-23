@@ -1,8 +1,11 @@
-import { makeStyles, TextField, Typography, Button, } from "@material-ui/core";
-import { Box } from "@material-ui/core";
-import img from '../img/cam.png';
 
-import React from "react";
+import { makeStyles, TextField, Typography, Button, } from "@material-ui/core";
+
+import { signInWithEmailAndPassword } from "firebase/auth";
+
+import { auth } from "../Firebase/firebaseConfig";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 const useStyle = makeStyles(
     {
         formContainer: {
@@ -22,13 +25,34 @@ const useStyle = makeStyles(
             alignItems: 'center',
             justifyContent: 'center',
             padding: '2rem',
-            
+
             borderRadius: '2%'
         }
     }
 )
 const Login = () => {
     const classes = useStyle();
+    const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("");
+    const [error, setError] = useState(false);
+    const navigate = useNavigate();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            await signInWithEmailAndPassword(auth, email, password);
+            navigate("/")
+        }
+        catch (error) {
+            setError(true)
+            console.log( "log in failed" , error)
+
+        }
+    }
+
+
+
     return (
         <div className={classes.formContainer}>
             <div className={classes.formCard}>
@@ -36,18 +60,20 @@ const Login = () => {
                 <Typography style={{ fontWeight: 'bold' }} variant='h5'>Roshan chat</Typography>
                 <Typography variant='h6'> chat</Typography>
 
-                <form action="">
-                    <Box >
-                        
-                        <TextField fullWidth id="password" type="password" label="password" variant="standard" /><br />
-                        <TextField fullWidth id="email" type="email" label="email" variant="standard" /><br />
-                        <br />
-                        
-                        <Button style={{  background: 'black', color: 'white' }} fullWidth variant="contained">Sign in</Button><br />
-                    </Box>
+                <form onSubmit={handleSubmit} >
+
+
+                    <TextField fullWidth id="email" onChange={(e) => setEmail(e.target.value)} type="email" label="Email" variant="outlined" /><br />
+                    <br />
+                    <TextField fullWidth id="password" onChange={(e) => setPassword(e.target.value)} type="Password" label="password" variant="outlined" /><br /><br />
+
+                    <Button type="submit" style={{ background: 'black', color: 'white' }} fullWidth variant="contained">Sign in</Button><br />
+
                 </form>
 
-                <Typography style={{marginTop:'1rem'}} variant='h6'>You don't have an Account ? Register </Typography>
+                <Typography style={{ marginTop: '1rem' }} variant='h6'>You don't have an Account ? <Link to="/signup">Register</Link> </Typography>
+
+                {error && <span>Something Went wrong</span>}
             </div>
         </div>
     );

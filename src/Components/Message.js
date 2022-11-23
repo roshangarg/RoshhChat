@@ -1,16 +1,36 @@
-import React from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
 import { Typography } from "@material-ui/core";
+import { AuthContext } from "../Context/AuthContext";
+import { ChatContext } from "../Context/ChatContext";
 const useStyles = makeStyles((theme) => ({
-     Message:{
-        marginBottom:'1rem',
-        display :'flex',
-        gap:'2rem',
-        alignItems:'center',
-        flexDirection:'row-reverse',
-        // position:'absolute'
-     },
+    
+   //   Owner:{
+   //    marginBottom:'1rem',
+   //    display :'flex',
+   //    gap:'2rem',
+   //    alignItems:'center',
+   //    flexDirection:"column"
+     
+   //    // position:'absolute'
+   // },
+   Message:{
+      marginBottom:'1rem',
+      display :'flex',
+      gap:'2rem',
+      alignItems:'center',
+      
+      // flexDirection:'row-reverse',
+      // position:'absolute'
+   },
+   owner:{
+      display:'flex',
+      marginBottom:'1rem',
+      gap:'2rem',
+      alignItems:'center',
+      flexDirection:'row-reverse'
+   },
      messageinfo:{
         fontWeight:'300',
        
@@ -20,25 +40,39 @@ const useStyles = makeStyles((theme) => ({
         
      },
      messgaecontent:{
-        maxWidth:'80%',
+        maxWidth:'50%',
         display:'flex',
         flexDirection:'column',
         gap:'1rem'
-
      }
 }))
-const Message = () => {
+const Message = ({message}) => {
+   // console.log('message. :>> ', Object.entries(message.date).map(time => {
+   //    console.log('time :>> ', time);
+   // }));
+   
     const classes = useStyles();
+    const { currentUser } = useContext(AuthContext);
+    const { data } = useContext(ChatContext);
+    const ref = useRef()
+    useEffect(() => {
+     ref.current?.scrollIntoView({behavior:"smooth"})
+    }, [message])
     return ( 
-        <div className={classes.Message}>
+        <div ref={ref} className={`${classes.Message} ${message.senderId===currentUser.uid && classes.owner}`}>
             <div className={classes.messageinfo}>
-            <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-            <Typography style={{ }} >just now</Typography>
+            <Avatar alt="Remy Sharp" src={message.senderId === currentUser.uid ? currentUser.photoURL : data.user.photoURL } />
+            {/* <Typography style={{ }} ></Typography> */}
+            {/* {Object.entries(message.date).map(time => (
+               <Typography style={{ }} >{time[0]}</Typography>
+            )
+                
+               )} */}
             </div>
             
            <div className={classes.messgaecontent}>
-            <Typography style={{background:'black' ,color:'white', padding:'0.5rem', borderRadius:'0 10px 10px', }} > Hello hjhdhsgdhx isvsaee fffsdfdsf Roshan </Typography>
-            <img src="" alt="" />
+            <Typography style={{background:'black' ,color:'white', padding:'0.8rem', borderRadius:'0 10px 10px',maxWidth:'max-Content' }} > {message.text} </Typography>
+            {message.img &&<img src={message.img}  alt="" />}
             </div>
         </div>
      );
