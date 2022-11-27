@@ -9,10 +9,9 @@ const useStyle= makeStyles(theme => ({
         height:'100vh',
         alignItems:'center',
         justifyContent:'center',
+        textAlign:'center',
         background:'black',
         color:'red',
-        
-
     }
 
 }))
