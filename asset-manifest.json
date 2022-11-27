@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/RoshhChat/static/css/main.d2fdb49d.css",
-    "main.js": "/RoshhChat/static/js/main.d058ffc6.js",
-    "static/media/cam.png": "/RoshhChat/static/media/cam.ecead711bc9e1c906216.png",
-    "index.html": "/RoshhChat/index.html",
-    "main.d2fdb49d.css.map": "/RoshhChat/static/css/main.d2fdb49d.css.map",
-    "main.d058ffc6.js.map": "/RoshhChat/static/js/main.d058ffc6.js.map"
+    "main.css": "/login/static/css/main.d2fdb49d.css",
+    "main.js": "/login/static/js/main.42a8f2c1.js",
+    "static/media/cam.png": "/login/static/media/cam.ecead711bc9e1c906216.png",
+    "index.html": "/login/index.html",
+    "main.d2fdb49d.css.map": "/login/static/css/main.d2fdb49d.css.map",
+    "main.42a8f2c1.js.map": "/login/static/js/main.42a8f2c1.js.map"
   },
   "entrypoints": [
     "static/css/main.d2fdb49d.css",
-    "static/js/main.d058ffc6.js"
+    "static/js/main.42a8f2c1.js"
   ]
 }
