@@ -26,11 +26,12 @@ function App() {
             element={
             <ProtectedRoutes>
               <Home/>
+              <Route path="*" element={<NotFound />} />
             </ProtectedRoutes>
           }/>
             <Route path="signup" element={<Register />}/>
             <Route path="login" element={<Login />}/>
-            <Route path="*" element={<NotFound />} />
+            
           </Routes>
         </BrowserRouter>
       
