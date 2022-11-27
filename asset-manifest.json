@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/RoshhChat/static/css/main.d2fdb49d.css",
-    "main.js": "/RoshhChat/static/js/main.d058ffc6.js",
+    "main.js": "/RoshhChat/static/js/main.c25cbf4d.js",
     "static/media/cam.png": "/RoshhChat/static/media/cam.ecead711bc9e1c906216.png",
     "index.html": "/RoshhChat/index.html",
     "main.d2fdb49d.css.map": "/RoshhChat/static/css/main.d2fdb49d.css.map",
-    "main.d058ffc6.js.map": "/RoshhChat/static/js/main.d058ffc6.js.map"
+    "main.c25cbf4d.js.map": "/RoshhChat/static/js/main.c25cbf4d.js.map"
   },
   "entrypoints": [
     "static/css/main.d2fdb49d.css",
-    "static/js/main.d058ffc6.js"
+    "static/js/main.c25cbf4d.js"
   ]
 }
