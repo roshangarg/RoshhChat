@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
 const Chats = () => {
     const classes = useStyles();
     const [chats , setChats] = useState([])
+    const [active ,setActive] = useState(false)
     const { currentUser } = useContext(AuthContext)
     const { dispatch } = useContext(ChatContext); 
     useEffect(() => {
@@ -52,7 +53,7 @@ const Chats = () => {
            <div style={{ height: '60vh', overflow: 'scroll' }}>
               <List>
                 {Object.entries(chats)?.sort((a,b) => b[1].date - a[1].date).map((chat) => (
-                     <div key={chat[0]} onClick={() => handelSelect(chat[1].userInfo)}>
+                     <div key={chat[0]}  onClick={() => handelSelect(chat[1].userInfo)}>
                      <ListItem className={classes.userChats}>
                        <ListItemAvatar>
                          <Avatar src={chat[1].userInfo.photoURL}/>

@@ -10,23 +10,25 @@ const useStyle = makeStyles(
     {
         formContainer: {
             width: "100%",
-            height: '100vh',
-            display: 'flex',
-            background: 'black',
-            alignItems: 'center',
-            justifyContent: 'center',
+            height: "100vh",
+            display: "flex",
+            background: "black",
+            alignItems: "center",
+            justifyContent: "center",
 
         },
         formCard: {
-            display: 'flex',
-            background: 'white',
-            alignContent: 'center',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '2rem',
-
-            borderRadius: '2%'
+            display: "flex",
+            background: '#EEEDE7',
+            alignContent: "center",
+            flexDirection: "column",
+            alignItems: "center",
+            textAlign:'center',
+            justifyContent: "center",
+            padding: "2rem",
+            margin:'1rem',
+        
+            borderRadius: "10%",
         }
     }
 )

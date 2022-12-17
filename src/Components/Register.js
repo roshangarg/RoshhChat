@@ -26,10 +26,12 @@ const useStyle = makeStyles({
     alignContent: "center",
     flexDirection: "column",
     alignItems: "center",
+    textAlign:'center',
     justifyContent: "center",
     padding: "2rem",
+    margin:'1rem',
 
-    borderRadius: "2%",
+    borderRadius: "10%",
   },
 });
 const Register = () => {
@@ -174,9 +176,10 @@ const Register = () => {
           </Box>
         </form>
 
-        <Typography style={{ marginTop: "1rem" }} variant="h6">
+        <Typography style={{ marginTop: "1rem"}} variant="h6">
           Do you have an account ? <Link to='/login' >Login</Link>
         </Typography>
+
         {error && <Typography> something went wrong</Typography>}
       </div>
     </div>

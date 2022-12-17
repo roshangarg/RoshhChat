@@ -4,12 +4,12 @@ import Message from "./Message";
 import { ChatContext } from "../Context/ChatContext";
 import { doc, onSnapshot } from "firebase/firestore";
 import { db } from '../Firebase/firebaseConfig'
-const high = 240;
+
 
 const useStyles = makeStyles((theme) => ({
         messages:{
           
-            padding:'2rem',
+            padding:'1rem',
             height:'67.5vh',
             background:'#EEEDE7',
             overflow:'scroll'

@@ -36,26 +36,12 @@ const useStyles = makeStyles((theme) => ({
 
 export const Home = () => {
   const classes = useStyles();
- 
-
- 
-  
-
-  
-
-
-
-
-  const isActive = useMediaQuery("(min-width: 600px)");
   return (
     <div className={classes.containerbar}>
       <Grid container spacing={0}>
         <Grid
           style={{
-            // borderRight: "1px solid black",
             height: "100vh",
-            // overflow:'scroll'
-
           }}
           item
           md={4}
@@ -69,7 +55,7 @@ export const Home = () => {
           </div>
         </Grid>
 
-        {isActive && (
+       
           <Grid item md={8} sm={8} xs={12}>
             <div >
               <Chat />
@@ -77,7 +63,7 @@ export const Home = () => {
               <Input />
             </div>
           </Grid>
-        )}
+        
       </Grid>
     </div>
   );

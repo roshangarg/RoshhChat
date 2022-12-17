@@ -100,7 +100,7 @@ const Search = () => {
     return ( 
         <div>
             <TextField
-              style={{ margin: "1rem", width: '400px' }}
+              
               onChange={(e) => setUsername(e.target.value)}
               onKeyDown={handleKey}
               value={username}
@@ -108,6 +108,7 @@ const Search = () => {
               id="standard-search"
               label="Find a User "
               type="search"
+              fullWidth
             />
             {err&& <span>something went wrong </span>}
            { 

@@ -1,4 +1,4 @@
-import { makeStyles, Typography } from "@material-ui/core";
+import { makeStyles, Typography ,Box} from "@material-ui/core";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -10,7 +10,7 @@ const useStyle= makeStyles(theme => ({
         alignItems:'center',
         justifyContent:'center',
         textAlign:'center',
-        background:'black',
+       
         color:'red',
     }
 
@@ -19,9 +19,13 @@ const NotFound = () => {
     const classes = useStyle();
     return ( 
         <div className={classes.notFound}>
-            <Typography variant="h5"style={{marginRight:'2rem'}} > Opps! Page Not Found</Typography>
-            <br />
+           <Box>
+           <Typography variant="h5" > Opps! Page Not Found</Typography>
+           
+           </Box>
+            <Box>
             <Link to='/'>Go back to Home Page </Link>
+            </Box>
         </div>
      );
 }

@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
    //    // position:'absolute'
    // },
    Message:{
-      marginBottom:'1rem',
+      marginBottom:'0.5rem',
       display :'flex',
       gap:'2rem',
       alignItems:'center',
@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
    },
    owner:{
       display:'flex',
-      marginBottom:'1rem',
+      marginBottom:'0.5rem',
       gap:'2rem',
       alignItems:'center',
       flexDirection:'row-reverse'
@@ -71,7 +71,7 @@ const Message = ({message}) => {
             </div>
             
            <div className={classes.messgaecontent}>
-            <Typography style={{background:'black' ,color:'white', padding:'0.8rem', borderRadius:'0 10px 10px',maxWidth:'max-Content' }} > {message.text} </Typography>
+            <Typography style={{background:'black' ,color:'white', padding:'0.4rem', borderRadius:'0 10px 10px',maxWidth:'max-Content' }} > {message.text} </Typography>
             {message.img &&<img src={message.img}  alt="" />}
             </div>
         </div>
